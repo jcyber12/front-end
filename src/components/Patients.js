@@ -62,14 +62,14 @@ const Patients = () => {
       <CssBaseline />
       <AppBar position="static" sx={{ marginBottom: 2 }}>
         <Toolbar>
-          <Typography variant="h6">Registered Patients</Typography>
+          <Typography variant="h6">Patients</Typography>
         </Toolbar>
       </AppBar>
 
 
-      <Container maxWidth="lg" >
+      <Container maxWidth="false" marginTop="120" sx={{ paddingX: { xs: 2, md: 4 } }} >
 
-        <TableContainer component={Paper} marginTop="120">
+        <TableContainer component={Paper} >
           <Table sx={{ minWidth: 800 }} aria-label="patients table">
             <TableHead>
               <TableRow>
@@ -121,7 +121,6 @@ const Patients = () => {
           </Table>
         </TableContainer>
 
-        {/* Pagination */}
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
@@ -133,7 +132,7 @@ const Patients = () => {
         />
       </Container>
 
-      {/* Footer */}
+    
       <Box
         sx={{
           marginTop: "auto",
