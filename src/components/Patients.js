@@ -1,21 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Container,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  TablePagination,
-  CircularProgress,
-  Box,
-  CssBaseline,
-} from "@mui/material";
+import {AppBar,Toolbar,Typography,Container,Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Paper,TablePagination,CircularProgress,Box,CssBaseline,} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -62,7 +46,7 @@ const Patients = () => {
       <CssBaseline />
       <AppBar position="static" sx={{ marginBottom: 2 }}>
         <Toolbar>
-          <Typography variant="h6">Patients</Typography>
+          <Typography variant="h6">Patients Details</Typography>
         </Toolbar>
       </AppBar>
 
@@ -78,8 +62,8 @@ const Patients = () => {
                 <TableCell>Registration ID</TableCell>
                 <TableCell>Guarantor Name</TableCell>
                 <TableCell>Date of Birth</TableCell>
-                <TableCell>Country</TableCell>
-                <TableCell>Diseased</TableCell>
+                <TableCell>Region</TableCell>
+                <TableCell>Ward</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -104,10 +88,10 @@ const Patients = () => {
                       <TableCell>{page * rowsPerPage + index + 1}</TableCell>
                       <TableCell>{patient.Patient_Name}</TableCell>
                       <TableCell>{patient.Registration_ID}</TableCell>
-                      <TableCell>{patient.Guarantor_Name || "N/A"}</TableCell>
+                      <TableCell>{patient.Guarantor_Name || "CASH"}</TableCell>
                       <TableCell>{patient.Date_Of_Birth || "N/A"}</TableCell>
-                      <TableCell>{patient.Country || "N/A"}</TableCell>
-                      <TableCell>{patient.Diseased || "N/A"}</TableCell>
+                      <TableCell>{patient.Region || "N/A"}</TableCell>
+                      <TableCell>{patient.Ward || "N/A"}</TableCell>
                     </TableRow>
                   ))
               ) : (
